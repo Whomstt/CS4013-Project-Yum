@@ -5,6 +5,6 @@ public class Restaurant {
     }
 
     public static void main(String[] args) {
-        System.out.println("baba boey");
+        System.out.println("baba by");
     }
 }
