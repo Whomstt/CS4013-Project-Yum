@@ -1,12 +1,23 @@
 public abstract class Person {
-    String name;
-    String phoneNumber;
-    String email;
-    public Person(String name, String phoneNumber, String email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+    private String name;
+    private String age;
+
+
+    public String getAge() {
+        return age;
     }
+
+    public Person(String name, String age) {
+        this.name = name;
+        this.age = age;
+
+
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
 
     public Person() {
 
@@ -20,19 +31,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
