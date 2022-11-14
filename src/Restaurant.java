@@ -1,12 +1,11 @@
 public class Restaurant {
-    private int RestaurantID;
-    private int TableNo;
+    private String RestaurantID;
     private int Capacity;
 
-    public Restaurant(){
-    }
+    public Restaurant(String RestaurantI){
 
-    public int getRestaurantID() {
+    }
+    public String getRestaurantID() {
         return RestaurantID;
     }
 
@@ -14,16 +13,20 @@ public class Restaurant {
         return Capacity;
     }
 
-    public int getTableNo() {
-        return TableNo;
+    public void setRestaurantID(String restaurantID) {
+        RestaurantID = restaurantID;
     }
 
-    public void setTableNo_setCapacity(int capacity, int capacity2,int tableNo, int tableNo2) {
-        Capacity = capacity + capacity2;
-        if(tableNo > tableNo2 ){
-            TableNo = tableNo;
-        }else{
-            TableNo = tableNo2;
-        }
+    public void setCapacity(int capacity) {
+        Capacity = capacity;
+    }
+
+    public void mergeTableCapacity(int capacity, int capacity2,int tableNo, int tableNo2) {
+//        Capacity = capacity + capacity2;
+//        if(tableNo < tableNo2 ){
+//            TableNo = tableNo;
+//        }else{
+//            TableNo = tableNo2;
+//        }
     }
 }

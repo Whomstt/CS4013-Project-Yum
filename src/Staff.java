@@ -1,6 +1,5 @@
-public class Staff {
-    private String name;
-    public Staff(String name){
-        this.name = name;
+public class Staff extends Person{
+    public Staff(String name, String phoneNumber, String email) {
+        super(name, phoneNumber, email);
     }
 }
