@@ -35,7 +35,7 @@ public class Item {
         this.type = type;
     }
 
-    public String tString() {
-        return name + " " + price;
+    public String toString() {
+        return name + " €" + price;
     }
 }

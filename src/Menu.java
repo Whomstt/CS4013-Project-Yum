@@ -34,19 +34,22 @@ public class Menu {
 
     public void format() {
         System.out.println("STARTERS");
+
         for (Item I : menu)
         if(I.getType() == "Starter") {
-            System.out.println(I.tString());
+            System.out.println(I.toString());
         }
+        System.out.println("");
         System.out.println("MAIN COURSES");
         for (Item I : menu)
             if(I.getType() == "Main Course") {
-                System.out.println(I.tString());
+                System.out.println(I.toString());
             }
+        System.out.println("");
         System.out.println("DESSERTS");
         for (Item I : menu)
             if(I.getType() == "Dessert") {
-                System.out.println(I.tString());
+                System.out.println(I.toString());
             }
     }
 
