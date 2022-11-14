@@ -34,4 +34,8 @@ public class Item {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String tString() {
+        return name + " " + price;
+    }
 }
