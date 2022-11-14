@@ -3,6 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+<<<<<<< HEAD
         <entry key="C:\Users\steve\IdeaProjects\CS4013-Project-Yum\src\Bill.csv">
           <value>
             <Attribute>
@@ -24,6 +25,8 @@
             </Attribute>
           </value>
         </entry>
+=======
+>>>>>>> origin/master
         <entry key="\src\Bill.csv">
           <value>
             <Attribute>
@@ -31,6 +34,16 @@
             </Attribute>
           </value>
         </entry>
+<<<<<<< HEAD
+=======
+        <entry key="\src\Menu.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+>>>>>>> origin/master
         <entry key="\src\Reservations.csv">
           <value>
             <Attribute>
