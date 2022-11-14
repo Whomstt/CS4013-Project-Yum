@@ -1,6 +1,7 @@
 public class Bill extends Order{
     private int numberOfPeople;
     private double tips;
+
     public Bill(double total, int numberOfPeople) {
         super(total);
         this.numberOfPeople = numberOfPeople;
@@ -26,6 +27,7 @@ public class Bill extends Order{
 
     public void setTips(double tips) {
         this.tips = tips;
+
     }
 
 }
