@@ -11,8 +11,8 @@ public class Menu {
 
     public Menu() throws FileNotFoundException {
         menu = new ArrayList<Item>();
-        csvFile = new File("Menu.csv");
-        out = new PrintWriter(csvFile);
+        out = new PrintWriter("Menu.csv");
+        out.print("No, ");
         out.print("Name, ");
         out.print("Price, ");
         out.println("Type");
@@ -22,7 +22,6 @@ public class Menu {
         Item newItem = new Item(name, price, type);
         menu.add(newItem);
         Item last = menu.get(menu.size() - 1);
-
             out.print(last.getName());
             out.print(", ");
             out.print(last.getPrice());
@@ -35,21 +34,27 @@ public class Menu {
     public void format() {
 
         System.out.println("STARTERS");
-
+        int i = 1;
         for (Item I : menu)
         if(I.getType() == "Starter") {
+            System.out.print(i+",");
+            i++;
             System.out.println(I.toString());
         }
         System.out.println("");
         System.out.println("MAIN COURSES");
         for (Item I : menu)
             if(I.getType() == "Main Course") {
+                System.out.print(i+",");
+                i++;
                 System.out.println(I.toString());
             }
         System.out.println("");
         System.out.println("DESSERTS");
         for (Item I : menu)
             if(I.getType() == "Dessert") {
+                System.out.print(i+",");
+                i++;
                 System.out.println(I.toString());
             }
     }

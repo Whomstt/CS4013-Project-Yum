@@ -2,6 +2,7 @@ public class Item {
     private String name;
     private double price;
     private String type;
+    private int No;
 
 
     public Item(String name, double price, String type) {
@@ -27,5 +28,9 @@ public class Item {
 
     public String toString() {
         return name + " €" + price;
+    }
+
+    public int getNo(int i) {
+        return No;
     }
 }
