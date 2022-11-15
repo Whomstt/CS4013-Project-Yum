@@ -65,6 +65,11 @@ public class Menu {
         defaultMenu.out.close();
     }
 
+    public ArrayList<Item> getMenu() {
+        return menu;
+    }
+
+
 
 
 }
