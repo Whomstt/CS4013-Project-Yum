@@ -1,14 +1,14 @@
-public class Bill extends Order{
+public class Bill {
     private int numberOfPeople;
     private double tips;
 
     public Bill(double total, int numberOfPeople) {
-        super(total);
+
         this.numberOfPeople = numberOfPeople;
     }
 
     public Bill(double total, int numberOfPeople, double tips) {
-        super(total);
+
         this.numberOfPeople = numberOfPeople;
         this.tips = tips;
     }

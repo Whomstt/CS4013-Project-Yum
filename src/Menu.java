@@ -33,6 +33,7 @@ public class Menu {
 
 
     public void format() {
+
         System.out.println("STARTERS");
 
         for (Item I : menu)
@@ -51,6 +52,17 @@ public class Menu {
             if(I.getType() == "Dessert") {
                 System.out.println(I.toString());
             }
+    }
+
+    public void createDefaultMenu(Menu defaultMenu) throws FileNotFoundException {
+        defaultMenu.addItem("Chicken" , 17, "Main Course");
+        defaultMenu.addItem("Beef" , 17, "Main Course");
+        defaultMenu.addItem("Ice Cream" , 10, "Dessert");
+        defaultMenu.addItem("Bread" , 6, "Starter");
+        defaultMenu.addItem("Wings" , 6, "Starter");
+        defaultMenu.addItem("Soup" , 4, "Starter");
+
+        defaultMenu.out.close();
     }
 
 

@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class RestaurantUI {
     private Scanner in;
 
-
     public RestaurantUI() {
         in = new Scanner(System.in);
     }
@@ -28,6 +27,7 @@ public class RestaurantUI {
                 } else if (command.equals("Q")) {
                 System.out.println("Exiting program... \uD83C\uDF46");
                 more = false;
+
             }
         }
     }
