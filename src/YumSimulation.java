@@ -6,5 +6,7 @@ public class YumSimulation {
         Restaurant restaurant = new Restaurant("Restaurant1");
         RestaurantUI restaurantUI = new RestaurantUI();
         restaurantUI.run(restaurant);
+
+
     }
 }

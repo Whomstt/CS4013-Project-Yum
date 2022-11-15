@@ -3,30 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-<<<<<<< HEAD
-        <entry key="C:\Users\steve\IdeaProjects\CS4013-Project-Yum\src\Bill.csv">
+        <entry key="\Menu.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="C:\Users\steve\IdeaProjects\CS4013-Project-Yum\src\Reservations.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="C:\Users\steve\IdeaProjects\CS4013-Project-Yum\src\Restaurant.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-=======
->>>>>>> origin/master
         <entry key="\src\Bill.csv">
           <value>
             <Attribute>
@@ -34,8 +17,6 @@
             </Attribute>
           </value>
         </entry>
-<<<<<<< HEAD
-=======
         <entry key="\src\Menu.csv">
           <value>
             <Attribute>
@@ -43,7 +24,6 @@
             </Attribute>
           </value>
         </entry>
->>>>>>> origin/master
         <entry key="\src\Reservations.csv">
           <value>
             <Attribute>
