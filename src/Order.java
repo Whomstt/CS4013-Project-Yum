@@ -1,15 +1,23 @@
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
 public class Order {
-    private double total;
+    private int numOfPeople;
+    private ArrayList<Item> order;
+    private double total = 0;
 
-    public Order(double total) {
-        this.total = total;
+
+    public void placeOrder(int numOfPeople) throws FileNotFoundException {
+        this.numOfPeople = numOfPeople;
+        Menu thisMenu = new Menu();
+        thisMenu.createDefaultMenu(thisMenu);
+        thisMenu.format();
     }
 
-    public double getTotal() {
-        return total;
-    }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
+
+
+
+
+
 }
