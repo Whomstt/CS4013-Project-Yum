@@ -22,6 +22,7 @@ public class Restaurant {
     }
 
     public void mergeTableCapacity(int capacity, int capacity2,int tableNo, int tableNo2) {
+
 //        Capacity = capacity + capacity2;
 //        if(tableNo < tableNo2 ){
 //            TableNo = tableNo;

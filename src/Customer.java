@@ -36,4 +36,11 @@ public class Customer extends Person {
     public void buyProduct(){
 
     }
+    public void refundProduct(){
+
+    }
+    public void complaint(){
+
+    }
+
 }

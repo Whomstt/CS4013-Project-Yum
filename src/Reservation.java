@@ -16,4 +16,8 @@ public class Reservation {
         this.phoneNumber = phoneNumber;
         localDateTime = LocalDateTime.now();
     }
+
+    public String toString() {
+        return "" + "Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numberOfPeople + " Phone Number: " + phoneNumber;
+    }
 }
