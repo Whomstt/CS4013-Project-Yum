@@ -1,9 +1,11 @@
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RestaurantUI {
+    private int reservationID = 1;
     private ArrayList<Reservation> reservations = new ArrayList<Reservation>();
     private Scanner in;
     public RestaurantUI() {
@@ -25,19 +27,27 @@ public class RestaurantUI {
                 String numberOfPeople = in.nextLine();
                 System.out.println("Enter phone number:");
                 String phoneNumber = in.nextLine();
-                Reservation reservation = new Reservation(name, day, time, numberOfPeople, phoneNumber);
+                Reservation reservation = new Reservation(reservationID, name, day, time, numberOfPeople, phoneNumber);
                 reservations.add(reservation);
+                reservationID++;
             } else if (command.equals("Q")) {
                 System.out.println("Exiting program... \uD83C\uDF46");
                 more = false;
 
             } else if (command.equals("S")) {
-                int i = 1;
-                for (Reservation r : reservations) {
-                    System.out.println("Reservation" + i);
-                    System.out.println(r.toString() + "\n");
-                    i++;
+                Scanner sc = new Scanner(new File("./Reservations.csv"));
+                sc.useDelimiter(",");
+                while (sc.hasNext()) {
+                    System.out.print(sc.next() + ", ");
                 }
+                System.out.println();
+                sc.close();
+//                int i = 1;
+//                for (Reservation r : reservations) {
+//                    System.out.println("Reservation" + i);
+//                    System.out.println(r.toString() + "\n");
+//                    i++;
+//                }
             }
         }
     }
