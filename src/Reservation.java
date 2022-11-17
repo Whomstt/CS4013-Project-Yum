@@ -19,7 +19,7 @@ public class Reservation {
 
 
 
-    public Reservation(String name, String day, String time, String numOfPeople, String phoneNumber) throws IOException {
+    public Reservation(int reservationID, String name, String day, String time, String numOfPeople, String phoneNumber) throws IOException {
         this.name = name;
         this.day = day;
         this.time = time;
