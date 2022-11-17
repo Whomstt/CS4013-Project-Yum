@@ -28,7 +28,6 @@ public class Menu {
             out.print(last.getPrice());
             out.print(", ");
             out.println(last.getType());
-
     }
 
 
