@@ -1,7 +1,12 @@
 Name, Price, Type
-Chicken, 17.0, Main Course
-Beef, 17.0, Main Course
-Ice Cream, 10.0, Dessert
-Bread, 6.0, Starter
-Wings, 6.0, Starter
-Soup, 4.0, Starter
+chicken, 12.5, Main Course
+beef, 15.0, Main Course
+ice cream, 7.0, Dessert
+bread, 3.0, Starter
+wings, 6.0, Starter
+soup, 4.0, Starter
+apple tart, 5.0, Dessert
+pudding, 6.5, Dessert
+curry, 10.0, Main Course
+lasagna, 12.0, Main Course
+, 0.0, 

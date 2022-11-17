@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Menu {
-    private ArrayList<Item> menu;
+    private ArrayList<Item> menu = new ArrayList<>();
     private File csvFile;
     PrintWriter out;
 
@@ -55,12 +55,17 @@ public class Menu {
     }
 
     public void createDefaultMenu(Menu defaultMenu) throws FileNotFoundException {
-        defaultMenu.addItem("Chicken" , 17, "Main Course");
-        defaultMenu.addItem("Beef" , 17, "Main Course");
-        defaultMenu.addItem("Ice Cream" , 10, "Dessert");
-        defaultMenu.addItem("Bread" , 6, "Starter");
-        defaultMenu.addItem("Wings" , 6, "Starter");
-        defaultMenu.addItem("Soup" , 4, "Starter");
+        defaultMenu.addItem("chicken" , 12.50, "Main Course");
+        defaultMenu.addItem("beef" , 15, "Main Course");
+        defaultMenu.addItem("ice cream" , 7, "Dessert");
+        defaultMenu.addItem("bread" , 3, "Starter");
+        defaultMenu.addItem("wings" , 6, "Starter");
+        defaultMenu.addItem("soup" , 4, "Starter");
+        defaultMenu.addItem("apple tart" , 5, "Dessert");
+        defaultMenu.addItem("pudding" , 6.50, "Dessert");
+        defaultMenu.addItem("curry" , 10, "Main Course");
+        defaultMenu.addItem("lasagna" , 12, "Main Course");
+        defaultMenu.addItem("" , 0, "");
 
         defaultMenu.out.close();
     }
