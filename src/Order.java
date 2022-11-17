@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Order {
@@ -89,6 +88,9 @@ public class Order {
         System.out.println("Your total for this meal is €"+ total);
     }
 
+    public double getTotal() {
+        return total;
+    }
 
 
 }
