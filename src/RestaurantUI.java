@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -32,6 +33,12 @@ public class RestaurantUI {
                 more = false;
 
             } else if (command.equals("S")) {
+                Scanner sc = new Scanner(new File("./src/Reservations.csv"));
+                sc.useDelimiter(",");
+                while (sc.hasNext()) {
+                    System.out.println(sc.next());
+                }
+                sc.close();
                 int i = 1;
                 for (Reservation r : reservations) {
                     System.out.println("Reservation" + i);
