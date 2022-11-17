@@ -20,7 +20,7 @@ public class Order {
                     return p;
                 }
             }
-            System.out.println("not on menu try again");
+            System.out.println("Item not on menu try again");
 
         return new Item("error", 0, "");
     }
@@ -48,29 +48,29 @@ public class Order {
 
 
             Scanner start = new Scanner(System.in);
-            System.out.println("Enter Starter:");
+            System.out.println("Enter Starter (Press s to skip this course):");
             String Starter = start.nextLine().toLowerCase();
             while(selectItem(Starter).getName().equals("error")) {
-                System.out.println("Enter Starter:");
+                System.out.println("Enter Starter (Press s to skip this course):");
                 Starter = start.nextLine().toLowerCase();
             }
             addToOrder(selectItem(Starter));
 
 
             Scanner main = new Scanner(System.in);
-            System.out.println("Enter Main Course:");
+            System.out.println("Enter Main Course (Press s to skip this course):");
             String mainCourse = main.nextLine().toLowerCase();
             while(selectItem(mainCourse).getName().equals("error")) {
-                System.out.println("Enter Main Course:");
+                System.out.println("Enter Main Course (Press s to skip this course):");
                 mainCourse = start.nextLine().toLowerCase();
             }
             addToOrder(selectItem(mainCourse));
 
             Scanner dessert = new Scanner(System.in);
-            System.out.println("Enter Dessert:");
+            System.out.println("Enter Dessert (Press s to skip this course):");
             String des = dessert.nextLine().toLowerCase();
             while(selectItem(des).getName().equals("error")) {
-                System.out.println("Enter Dessert:");
+                System.out.println("Enter Dessert (Press s to skip this course):");
                 des = start.nextLine().toLowerCase();
             }
             addToOrder(selectItem(des));

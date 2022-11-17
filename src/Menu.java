@@ -64,7 +64,7 @@ public class Menu {
         defaultMenu.addItem("pudding" , 6.50, "Dessert");
         defaultMenu.addItem("curry" , 10, "Main Course");
         defaultMenu.addItem("lasagna" , 12, "Main Course");
-        defaultMenu.addItem("" , 0, "");
+        defaultMenu.addItem("s" , 0, "");
 
         defaultMenu.out.close();
     }
