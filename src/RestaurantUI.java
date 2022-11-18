@@ -22,15 +22,17 @@ public class RestaurantUI {
             if (command.equals("P")) {
                 System.out.println("Enter Reservation Name:");
                 String name = in.nextLine();
-                System.out.println("Enter Reservation Day:");
+                System.out.println("Enter Reservation Date:");
                 String day = in.nextLine();
                 System.out.println("Enter Reservation Time:");
                 String time = in.nextLine();
                 System.out.println("Enter Number of People:");
                 String numberOfPeople = in.nextLine();
+                System.out.println("Enter Table Number");
+                String tableNumber = in.nextLine();
                 System.out.println("Enter phone number:");
                 String phoneNumber = in.nextLine();
-                Reservation reservation = new Reservation(reservationID, name, day, time, numberOfPeople, phoneNumber);
+                Reservation reservation = new Reservation(name, day, time, numberOfPeople, phoneNumber, tableNumber);
                 reservations.add(reservation);
                 reservationID++;
             } else if (command.equals("Q")) {
