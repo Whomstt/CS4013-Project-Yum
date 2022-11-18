@@ -14,7 +14,7 @@ public class RestaurantUI {
     public void run(Restaurant restaurant) throws IOException {
         boolean more = true;
         while(more) {
-            System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction (Q)uit");
+            System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction  (O)rder  (Q)uit");
             String command = in.nextLine().toUpperCase();
             if (command.equals("P")) {
                 System.out.println("Enter Reservation Name:");
@@ -34,7 +34,12 @@ public class RestaurantUI {
                 System.out.println("Exiting program... \uD83C\uDF46");
                 more = false;
 
+            } else if (command.equals("O")) {
+                Order thisOrder = new Order();
+                thisOrder.placeOrder();
             }
+
+
             else if (command.equals("T")) {
                 System.out.println("(C)ard  (CA)sh  (S)how balance");
                 command = in.nextLine().toUpperCase();

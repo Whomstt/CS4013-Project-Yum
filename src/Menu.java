@@ -56,8 +56,11 @@ public class Menu {
     public void createDefaultMenu(Menu defaultMenu) throws FileNotFoundException {
         defaultMenu.addItem("chicken" , 12.50, "Main Course");
         defaultMenu.addItem("beef" , 15, "Main Course");
+        defaultMenu.addItem("burger" , 12, "Main Course");
+        defaultMenu.addItem("salad" , 8, "Main Course");
         defaultMenu.addItem("ice cream" , 7, "Dessert");
         defaultMenu.addItem("bread" , 3, "Starter");
+        defaultMenu.addItem("sandwich" , 8, "Starter");
         defaultMenu.addItem("wings" , 6, "Starter");
         defaultMenu.addItem("soup" , 4, "Starter");
         defaultMenu.addItem("apple tart" , 5, "Dessert");

@@ -6,6 +6,7 @@ public class Order {
     private ArrayList<Item> order = new ArrayList<Item>();
     private ArrayList<Item> defaultMenu;
     private double total;
+    private boolean orderStatus = false;
 
     public Order () throws FileNotFoundException {
         Menu thisMenu = new Menu();
@@ -91,6 +92,15 @@ public class Order {
     public double getTotal() {
         return total;
     }
+
+    private boolean getOrderStatus() {
+        return orderStatus;
+    }
+
+    private void setOrderStatus(boolean orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
 
 
 }
