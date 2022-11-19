@@ -72,6 +72,9 @@ public class RestaurantUI {
                     System.out.println("(C)ard  (CA)sh");
                     command = in.nextLine().toUpperCase();
                     if (command.equals("CA")) {
+                        if (total == 0) {
+                            System.out.println("Please order before attempting to pay");
+                        } else
                         if (money.getCashBalance() >= total) {
                             money.addCashBalance(-total);
                             System.out.println("Payment successful your change is €" + money.getCashBalance());
@@ -82,6 +85,9 @@ public class RestaurantUI {
 
                     }
                 } if (command.equals("C")) {
+                    if (total == 0) {
+                        System.out.println("Please order before attempting to pay");
+                    } else
                     if (money.getCardBalance() >= total) {
                         money.addCardBalance(-total);
                         System.out.println("Payment successful your remaining balance is €" + money.getCardBalance());
