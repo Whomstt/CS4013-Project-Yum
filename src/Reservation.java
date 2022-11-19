@@ -23,8 +23,9 @@ public class Reservation {
         this.time = time;
         this.numOfPeople = numOfPeople;
         this.phoneNumber = phoneNumber;
+        int reservationID = (int)(Math.random()*1000);
         localDateTime = LocalDateTime.now();
-        outReserves.print("\n" + name + "," + numOfPeople + "," + day + "," + time + "," + tableNumber + "," + name);
+        outReserves.print("\n" + reservationID + "," + numOfPeople + "," + day + "," + time + "," + tableNumber + "," + name);
         outReserves.close();
     }
 
