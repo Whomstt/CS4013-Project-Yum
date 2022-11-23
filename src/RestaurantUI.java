@@ -19,8 +19,11 @@ public class RestaurantUI {
     public void run(Restaurant restaurant) throws IOException {
         boolean more = true;
         while (more) {
-            System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction  (O)rder  (Q)uit");
+            System.out.println("Login As (C)ustomer, (CH)ef, (W)aiter");
             String command = in.nextLine().toUpperCase();
+            if(command.equals("C") || command.equals("CH") || command.equals("W"))
+            System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction  (O)rder  (Q)uit");
+             command = in.nextLine().toUpperCase();
             if (command.equals("P")) {
                 System.out.println("(M)ake reservation  (C)heck Available Tables");
                 command = in.nextLine().toUpperCase();
