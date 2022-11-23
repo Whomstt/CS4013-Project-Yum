@@ -10,10 +10,10 @@ public class Order {
     private double total;
     private File csvFile;
     PrintWriter out;
+    private int restaurantID = 1;
 
     public Order() throws FileNotFoundException {
         Menu thisMenu = new Menu();
-        thisMenu.createDefaultMenu(thisMenu);
         defaultMenu = thisMenu.getMenu();
     }
 
@@ -39,16 +39,14 @@ public class Order {
 
     public void placeOrder() throws FileNotFoundException {
         Menu thisMenu = new Menu();
-        thisMenu.createDefaultMenu(thisMenu);
+        thisMenu.createMenu(thisMenu, restaurantID);
         defaultMenu = thisMenu.getMenu();
         thisMenu.format();
-        int i = 0;
-        System.out.println("");
+        System.out.println();
 
         boolean orderFinished = false;
 
         while (orderFinished == false) {
-
 
             Scanner start = new Scanner(System.in);
             System.out.println("Enter Starter (Press s to skip this course):");
@@ -87,6 +85,7 @@ public class Order {
                 orderFinished = true;
             }
         }
+        showBill();
 
 
     }
@@ -105,7 +104,11 @@ public class Order {
        }
         System.out.println();
         System.out.println("Your total is €"+ total);
-        System.out.println("Thanks for dining with Yum");
+        if (restaurantID == 1) {
+            System.out.println("Thanks for dining with Yum Diners");
+        } else if (restaurantID == 2) {
+            System.out.println("Thanks for dining with Yum Pizzas");
+        }
         System.out.println("--------------------------------");
 
 
