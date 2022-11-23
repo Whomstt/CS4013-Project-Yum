@@ -9,8 +9,10 @@ public class RestaurantUI {
     private Scanner in;
     private Money money = new Money();
     private double total;
+    Order order = new Order();
+    Reservation reservation = new Reservation();
 
-    public RestaurantUI() throws FileNotFoundException {
+    public RestaurantUI() throws IOException {
         in = new Scanner(System.in);
     }
 
@@ -56,7 +58,7 @@ public class RestaurantUI {
                 thisOrder.placeOrder();
                 total = thisOrder.getTotal();
             } else if (command.equals("T")) {
-                System.out.println("(C)ard  (CA)sh  (S)how balance  (P)ay order");
+                System.out.println("(C)ard  (CA)sh  (S)how balance  (SP)lit  (P)ay order");
                 command = in.nextLine().toUpperCase();
                 if (command.equals("C")) {
                     System.out.println("Enter card amount");
@@ -66,6 +68,10 @@ public class RestaurantUI {
                     System.out.println("Enter cash amount");
                     double cashAmount = in.nextDouble();
                     money.addCashBalance(cashAmount);
+                } else if (command.equals("SP")) {
+                    double v = this.order.getTotal() / (double)this.reservation.getNumOfPeopleInt();
+                    System.out.println("Everyone should pays " + v);
+                    v = this.in.nextDouble();
                 } else if (command.equals("S")) {
                     System.out.println("Balance amount: Cash " + money.getCashBalance() + " Card " + money.getCardBalance());
                 } else if (command.equals("P")) {

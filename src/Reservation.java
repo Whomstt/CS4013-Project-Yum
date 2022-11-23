@@ -23,17 +23,32 @@ public class Reservation {
         this.time = time;
         this.numOfPeople = numOfPeople;
         this.phoneNumber = phoneNumber;
-        int reservationID = (int)(Math.random()*1000);
+        int reservationID = (int) (Math.random() * 1000);
         localDateTime = LocalDateTime.now();
         outReserves.print("\n" + reservationID + "," + numOfPeople + "," + day + "," + time + "," + tableNumber + "," + name);
         outReserves.close();
     }
 
-    public void removeReservation(String reservationID) {
+    public Reservation() throws IOException {
 
     }
 
-    public String toString() {
-        return "" + "Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numOfPeople + " Phone Number: " + phoneNumber;
+
+    public String getNumOfPeople() {
+
+        return numOfPeople;
     }
-}
+
+    public int getNumOfPeopleInt() {
+        System.out.println("Number of people is " + numOfPeople);
+        return Integer.parseInt(numOfPeople);
+    }
+
+        public void removeReservation (String reservationID){
+
+        }
+
+        public String toString () {
+            return "" + "Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numOfPeople + " Phone Number: " + phoneNumber;
+        }
+    }
