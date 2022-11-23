@@ -72,8 +72,7 @@ public class RestaurantUI {
                     System.out.println("Total amount is £ " + this.thisOrder.getTotal());
                     System.out.println("The bill is split by " + this.thisReservation.getNumOfPeople() + " People");
                     double v = thisOrder.getTotal() / thisReservation.getNumOfPeople();
-                    System.out.println("The amount split is £" + v);
-                    v = this.in.nextDouble();
+                    System.out.println("The amount split is €" + v);
                 } else if (command.equals("S")) {
                     System.out.println("Balance amount: Cash " + money.getCashBalance() + " Card " + money.getCardBalance());
                 } else if (command.equals("P")) {
