@@ -42,13 +42,11 @@ public class Order {
         thisMenu.createMenu(thisMenu, restaurantID);
         defaultMenu = thisMenu.getMenu();
         thisMenu.format();
-        int i = 0;
-        System.out.println("");
+        System.out.println();
 
         boolean orderFinished = false;
 
         while (orderFinished == false) {
-
 
             Scanner start = new Scanner(System.in);
             System.out.println("Enter Starter (Press s to skip this course):");
@@ -105,7 +103,11 @@ public class Order {
        }
         System.out.println();
         System.out.println("Your total is €"+ total);
-        System.out.println("Thanks for dining with Yum");
+        if (restaurantID == 1) {
+            System.out.println("Thanks for dining with Yum Diners");
+        } else if (restaurantID == 2) {
+            System.out.println("Thanks for dining with Yum Pizzas");
+        }
         System.out.println("--------------------------------");
 
 
