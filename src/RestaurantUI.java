@@ -18,10 +18,11 @@ public class RestaurantUI {
 
     public void run(Restaurant restaurant) throws IOException {
         boolean more = true;
+        System.out.println("Login As (C)ustomer, (CH)ef, (W)aiter");
+        String command = in.nextLine().toUpperCase();
+        if(command.equals("C") || command.equals("CH") || command.equals("W"))
         while (more) {
-            System.out.println("Login As (C)ustomer, (CH)ef, (W)aiter");
-            String command = in.nextLine().toUpperCase();
-            if(command.equals("C") || command.equals("CH") || command.equals("W"))
+
             System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction  (O)rder  (Q)uit");
              command = in.nextLine().toUpperCase();
             if (command.equals("P")) {
@@ -72,10 +73,15 @@ public class RestaurantUI {
                     double cashAmount = in.nextDouble();
                     money.addCashBalance(cashAmount);
                 } else if (command.equals("SP")) {
+                    if (thisReservation.getNumOfPeople()==0){
+                        System.out.println("error, You must add reservarion first");
+                    }  else if(thisOrder.getTotal()==0){
+                        System.out.println("error, You must order first");
+                    } else{
                     System.out.println("Total amount is £ " + this.thisOrder.getTotal());
                     System.out.println("The bill is split by " + this.thisReservation.getNumOfPeople() + " People");
                     double v = thisOrder.getTotal() / thisReservation.getNumOfPeople();
-                    System.out.println("The amount split is €" + v);
+                    System.out.println("The amount split is €" + v);}
                 } else if (command.equals("S")) {
                     System.out.println("Balance amount: Cash " + money.getCashBalance() + " Card " + money.getCardBalance());
                 } else if (command.equals("P")) {
