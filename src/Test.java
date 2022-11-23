@@ -5,6 +5,7 @@ public class Test {
 
         Order test = new Order();
         test.placeOrder();
+        test.showBill();
 
 
     }

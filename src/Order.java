@@ -1,4 +1,6 @@
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,7 +8,8 @@ public class Order {
     private ArrayList<Item> order = new ArrayList<Item>();
     private ArrayList<Item> defaultMenu;
     private double total;
-    private boolean orderStatus = false;
+    private File csvFile;
+    PrintWriter out;
 
     public Order() throws FileNotFoundException {
         Menu thisMenu = new Menu();
@@ -85,20 +88,32 @@ public class Order {
             }
         }
 
-        System.out.println("Your total for this meal is €" + total);
+
     }
 
     public double getTotal() {
         return total;
     }
 
-    private boolean getOrderStatus() {
-        return orderStatus;
+    public void showBill() throws FileNotFoundException {
+        csvFile = new File("Bills.csv");
+        out = new PrintWriter(csvFile);
+        System.out.println("--------------------------------");
+        System.out.println("              BILL              ");
+        for (int i = 0; i < order.size();i++) {
+            System.out.println(order.get(i));
+       }
+        System.out.println();
+        System.out.println("Your total is €"+ total);
+        System.out.println("Thanks for dining with Yum");
+        System.out.println("--------------------------------");
+
+
+        out.println(total);
+        out.close();
     }
 
-    private void setOrderStatus(boolean orderStatus) {
-        this.orderStatus = orderStatus;
-    }
+
 
 
 
