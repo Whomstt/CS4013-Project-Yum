@@ -20,19 +20,33 @@ public class RestaurantUI {
             System.out.println("(P)lace reservation  (S)how Reservations  (R)emove Reservation (T)ransaction  (O)rder  (Q)uit");
             String command = in.nextLine().toUpperCase();
             if (command.equals("P")) {
-                System.out.println("Enter Reservation Name:");
-                String name = in.nextLine();
-                System.out.println("Enter Reservation Day:");
-                String day = in.nextLine();
-                System.out.println("Enter Reservation Time:");
-                String time = in.nextLine();
-                System.out.println("Enter Number of People:");
-                String numberOfPeople = in.nextLine();
-                System.out.println("Enter phone number:");
-                String phoneNumber = in.nextLine();
-                Reservation reservation = new Reservation(reservationID, name, day, time, numberOfPeople, phoneNumber);
-                reservations.add(reservation);
-                reservationID++;
+                System.out.println("(M)ake reservation  (C)heck Available Tables");
+                command = in.nextLine().toUpperCase();
+                if (command.equals("M")) {
+                    System.out.println("Enter Reservation Name:");
+                    String name = in.nextLine();
+                    System.out.println("Enter Reservation Date:");
+                    String day = in.nextLine();
+                    System.out.println("Enter Reservation Time:");
+                    String time = in.nextLine();
+                    System.out.println("Enter Number of People:");
+                    String numberOfPeople = in.nextLine();
+                    System.out.println("Enter Table Number");
+                    String tableNumber = in.nextLine();
+                    System.out.println("Enter phone number:");
+                    String phoneNumber = in.nextLine();
+                    Reservation reservation = new Reservation(name, day, time, numberOfPeople, phoneNumber, tableNumber);
+                    reservations.add(reservation);
+                    reservationID++;
+                } else if (command.equals("C")) {
+                    Scanner sc = new Scanner(new File("./Tables.csv"));
+                    sc.useDelimiter(",");
+                    while (sc.hasNext()) {
+                        System.out.print(sc.next() + ", ");
+                    }
+                    System.out.println();
+                    sc.close();
+                }
             } else if (command.equals("Q")) {
                 System.out.println("Exiting program... \uD83C\uDF46");
                 more = false;
@@ -58,6 +72,9 @@ public class RestaurantUI {
                     System.out.println("(C)ard  (CA)sh");
                     command = in.nextLine().toUpperCase();
                     if (command.equals("CA")) {
+                        if (total == 0) {
+                            System.out.println("Please order before attempting to pay");
+                        } else
                         if (money.getCashBalance() >= total) {
                             money.addCashBalance(-total);
                             System.out.println("Payment successful your change is €" + money.getCashBalance());
@@ -68,6 +85,9 @@ public class RestaurantUI {
 
                     }
                 } if (command.equals("C")) {
+                    if (total == 0) {
+                        System.out.println("Please order before attempting to pay");
+                    } else
                     if (money.getCardBalance() >= total) {
                         money.addCardBalance(-total);
                         System.out.println("Payment successful your remaining balance is €" + money.getCardBalance());

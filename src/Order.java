@@ -8,7 +8,7 @@ public class Order {
     private double total;
     private boolean orderStatus = false;
 
-    public Order () throws FileNotFoundException {
+    public Order() throws FileNotFoundException {
         Menu thisMenu = new Menu();
         thisMenu.createDefaultMenu(thisMenu);
         defaultMenu = thisMenu.getMenu();
@@ -17,11 +17,11 @@ public class Order {
 
     public Item selectItem(String i) {
         for (Item p : defaultMenu) {
-                if (i.equals(p.getName())) {
-                    return p;
-                }
+            if (i.equals(p.getName())) {
+                return p;
             }
-            System.out.println("Item not on menu try again");
+        }
+        System.out.println("Item not on menu try again");
 
         return new Item("error", 0, "");
     }
@@ -44,14 +44,13 @@ public class Order {
 
         boolean orderFinished = false;
 
-        while(orderFinished == false) {
-
+        while (orderFinished == false) {
 
 
             Scanner start = new Scanner(System.in);
             System.out.println("Enter Starter (Press s to skip this course):");
             String Starter = start.nextLine().toLowerCase();
-            while(selectItem(Starter).getName().equals("error")) {
+            while (selectItem(Starter).getName().equals("error")) {
                 System.out.println("Enter Starter (Press s to skip this course):");
                 Starter = start.nextLine().toLowerCase();
             }
@@ -61,7 +60,7 @@ public class Order {
             Scanner main = new Scanner(System.in);
             System.out.println("Enter Main Course (Press s to skip this course):");
             String mainCourse = main.nextLine().toLowerCase();
-            while(selectItem(mainCourse).getName().equals("error")) {
+            while (selectItem(mainCourse).getName().equals("error")) {
                 System.out.println("Enter Main Course (Press s to skip this course):");
                 mainCourse = start.nextLine().toLowerCase();
             }
@@ -70,7 +69,7 @@ public class Order {
             Scanner dessert = new Scanner(System.in);
             System.out.println("Enter Dessert (Press s to skip this course):");
             String des = dessert.nextLine().toLowerCase();
-            while(selectItem(des).getName().equals("error")) {
+            while (selectItem(des).getName().equals("error")) {
                 System.out.println("Enter Dessert (Press s to skip this course):");
                 des = start.nextLine().toLowerCase();
             }
@@ -86,7 +85,7 @@ public class Order {
             }
         }
 
-        System.out.println("Your total for this meal is €"+ total);
+        System.out.println("Your total for this meal is €" + total);
     }
 
     public double getTotal() {
