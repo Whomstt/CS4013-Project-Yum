@@ -10,10 +10,10 @@ public class Order {
     private double total;
     private File csvFile;
     PrintWriter out;
+    private int restaurantID = 1;
 
     public Order() throws FileNotFoundException {
         Menu thisMenu = new Menu();
-        thisMenu.createDefaultMenu(thisMenu);
         defaultMenu = thisMenu.getMenu();
     }
 
@@ -39,7 +39,7 @@ public class Order {
 
     public void placeOrder() throws FileNotFoundException {
         Menu thisMenu = new Menu();
-        thisMenu.createDefaultMenu(thisMenu);
+        thisMenu.createMenu(thisMenu, restaurantID);
         defaultMenu = thisMenu.getMenu();
         thisMenu.format();
         int i = 0;

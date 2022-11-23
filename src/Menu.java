@@ -53,21 +53,38 @@ public class Menu {
             }
     }
 
-    public void createDefaultMenu(Menu defaultMenu) throws FileNotFoundException {
-        defaultMenu.addItem("chicken" , 12.50, "Main Course");
-        defaultMenu.addItem("beef" , 15, "Main Course");
-        defaultMenu.addItem("burger" , 12, "Main Course");
-        defaultMenu.addItem("salad" , 8, "Main Course");
-        defaultMenu.addItem("ice cream" , 7, "Dessert");
-        defaultMenu.addItem("bread" , 3, "Starter");
-        defaultMenu.addItem("sandwich" , 8, "Starter");
-        defaultMenu.addItem("wings" , 6, "Starter");
-        defaultMenu.addItem("soup" , 4, "Starter");
-        defaultMenu.addItem("apple tart" , 5, "Dessert");
-        defaultMenu.addItem("pudding" , 6.50, "Dessert");
-        defaultMenu.addItem("curry" , 10, "Main Course");
-        defaultMenu.addItem("lasagna" , 12, "Main Course");
-        defaultMenu.addItem("s" , 0, "");
+    public void createMenu(Menu defaultMenu, int restaurantID) throws FileNotFoundException {
+        if (restaurantID == 1) {
+            defaultMenu.addItem("chicken", 12.50, "Main Course");
+            defaultMenu.addItem("beef", 15, "Main Course");
+            defaultMenu.addItem("burger", 12, "Main Course");
+            defaultMenu.addItem("salad", 8, "Main Course");
+            defaultMenu.addItem("ice cream", 7, "Dessert");
+            defaultMenu.addItem("bread", 3, "Starter");
+            defaultMenu.addItem("sandwich", 8, "Starter");
+            defaultMenu.addItem("wings", 6, "Starter");
+            defaultMenu.addItem("soup", 4, "Starter");
+            defaultMenu.addItem("apple tart", 5, "Dessert");
+            defaultMenu.addItem("pudding", 6.50, "Dessert");
+            defaultMenu.addItem("curry", 10, "Main Course");
+            defaultMenu.addItem("lasagna", 12, "Main Course");
+            defaultMenu.addItem("s", 0, "");
+        }
+
+        else if (restaurantID == 2) {
+            defaultMenu.addItem("wings", 4, "Starter");
+            defaultMenu.addItem("nachos", 4.50, "Starter");
+            defaultMenu.addItem("wings", 4, "Starter");
+            defaultMenu.addItem("chicken", 4, "Starter");
+            defaultMenu.addItem("garlic bread", 3, "Starter");
+            defaultMenu.addItem("pepperoni", 8, "Main Course");
+            defaultMenu.addItem("vegetarian", 8.50, "Main Course");
+            defaultMenu.addItem("meat feast", 9, "Main Course");
+            defaultMenu.addItem("cheese", 7.50, "Main Course");
+            defaultMenu.addItem("cookies" , 2.50, "Dessert");
+            defaultMenu.addItem("cookies" , 2.50, "Dessert");
+            defaultMenu.addItem("brownies" , 3, "Dessert");
+        }
 
         defaultMenu.out.close();
     }
