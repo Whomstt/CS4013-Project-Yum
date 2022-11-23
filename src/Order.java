@@ -17,6 +17,16 @@ public class Order {
         defaultMenu = thisMenu.getMenu();
     }
 
+    public void setRestaurantID(int newId) {
+        if (newId == 1) {
+            restaurantID = 1;
+        } else if (newId == 2) {
+            restaurantID = 2;
+        }
+        System.out.println(restaurantID);
+    }
+
+
 
     public Item selectItem(String i) {
         for (Item p : defaultMenu) {
@@ -40,6 +50,7 @@ public class Order {
     public void placeOrder() throws FileNotFoundException {
         Menu thisMenu = new Menu();
         thisMenu.createMenu(thisMenu, restaurantID);
+        System.out.println(restaurantID);
         defaultMenu = thisMenu.getMenu();
         thisMenu.format();
         System.out.println();

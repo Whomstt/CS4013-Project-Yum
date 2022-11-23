@@ -82,8 +82,9 @@ public class Menu {
             defaultMenu.addItem("meat feast", 9, "Main Course");
             defaultMenu.addItem("cheese", 7.50, "Main Course");
             defaultMenu.addItem("cookies" , 2.50, "Dessert");
-            defaultMenu.addItem("cookies" , 2.50, "Dessert");
+            defaultMenu.addItem("churros" , 3.50, "Dessert");
             defaultMenu.addItem("brownies" , 3, "Dessert");
+            defaultMenu.addItem("s", 0, "");
         }
 
         defaultMenu.out.close();

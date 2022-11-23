@@ -18,6 +18,8 @@ public class RestaurantUI {
 
     public void run(Restaurant restaurant) throws IOException {
         boolean more = true;
+        System.out.println("Select restaurant (1)Yum Diner, (2)Yum Pizza");
+        int restaurantID = Integer.parseInt(in.nextLine());
         System.out.println("Login As (C)ustomer, (CH)ef, (W)aiter");
         String command = in.nextLine().toUpperCase();
         if (command.equals("C") || command.equals("CH") || command.equals("W"))
@@ -58,6 +60,7 @@ public class RestaurantUI {
                     more = false;
 
                 } else if (command.equals("O")) {
+                    thisOrder.setRestaurantID(restaurantID);
                     thisOrder.placeOrder();
                     total = thisOrder.getTotal();
                 } else if (command.equals("T")) {
