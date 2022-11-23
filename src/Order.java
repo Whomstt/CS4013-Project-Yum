@@ -85,6 +85,7 @@ public class Order {
                 orderFinished = true;
             }
         }
+        showBill();
 
 
     }
