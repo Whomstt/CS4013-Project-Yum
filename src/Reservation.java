@@ -3,6 +3,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Reservation {
+    private int reservationID;
     private LocalDateTime localDateTime;
     private String name;
     private String day;
@@ -23,7 +24,7 @@ public class Reservation {
         this.time = time;
         this.numOfPeople = numOfPeople;
         this.phoneNumber = phoneNumber;
-        int reservationID = (int) (Math.random() * 1000);
+        this.reservationID = (int) (Math.random() * 1000);
         localDateTime = LocalDateTime.now();
         outReserves.print("\n" + reservationID + "," + numOfPeople + "," + day + "," + time + "," + tableNumber + "," + name);
         outReserves.close();
@@ -33,21 +34,15 @@ public class Reservation {
 
     }
 
-
     public int getNumOfPeople() {
         return numOfPeople;
-   }
-
-//    public int getNumOfPeopleInt() {
-//        System.out.println("Number of people is " + numOfPeople);
-//        return Integer.parseInt(numOfPeople);
-//    }
-
-        public void removeReservation (String reservationID){
-
-        }
-
-        public String toString () {
-            return "" + "Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numOfPeople + " Phone Number: " + phoneNumber;
-        }
     }
+
+    public int getReservationID() {
+        return reservationID;
+    }
+
+    public String toString() {
+        return "" + "Reservation ID: " + reservationID + " Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numOfPeople + " Phone Number: " + phoneNumber;
+    }
+}
