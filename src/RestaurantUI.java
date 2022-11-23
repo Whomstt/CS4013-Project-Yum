@@ -9,8 +9,8 @@ public class RestaurantUI {
     private Scanner in;
     private Money money = new Money();
     private double total;
-    Order order = new Order();
-    Reservation reservation = new Reservation();
+    Order thisOrder = new Order();
+    Reservation thisReservation = new Reservation();
 
     public RestaurantUI() throws IOException {
         in = new Scanner(System.in);
@@ -32,13 +32,14 @@ public class RestaurantUI {
                     System.out.println("Enter Reservation Time:");
                     String time = in.nextLine();
                     System.out.println("Enter Number of People:");
-                    String numberOfPeople = in.nextLine();
+                   int numberOfPeople = in.nextInt();
                     System.out.println("Enter Table Number");
                     String tableNumber = in.nextLine();
                     System.out.println("Enter phone number:");
                     String phoneNumber = in.nextLine();
                     Reservation reservation = new Reservation(name, day, time, numberOfPeople, phoneNumber, tableNumber);
                     reservations.add(reservation);
+                    thisReservation = reservation;
                     reservationID++;
                 } else if (command.equals("C")) {
                     Scanner sc = new Scanner(new File("./Tables.csv"));
@@ -54,7 +55,6 @@ public class RestaurantUI {
                 more = false;
 
             } else if (command.equals("O")) {
-                Order thisOrder = new Order();
                 thisOrder.placeOrder();
                 total = thisOrder.getTotal();
             } else if (command.equals("T")) {
@@ -69,8 +69,10 @@ public class RestaurantUI {
                     double cashAmount = in.nextDouble();
                     money.addCashBalance(cashAmount);
                 } else if (command.equals("SP")) {
-                    double v = this.order.getTotal() / (double)this.reservation.getNumOfPeopleInt();
-                    System.out.println("Everyone should pays " + v);
+                    System.out.println("Total amount is £ " + this.thisOrder.getTotal());
+                    System.out.println("The bill is split by " + this.thisReservation.getNumOfPeople() + " People");
+                    double v = thisOrder.getTotal() / thisReservation.getNumOfPeople();
+                    System.out.println("The amount split is £" + v);
                     v = this.in.nextDouble();
                 } else if (command.equals("S")) {
                     System.out.println("Balance amount: Cash " + money.getCashBalance() + " Card " + money.getCardBalance());
@@ -89,18 +91,18 @@ public class RestaurantUI {
                             System.out.println("Payment unsuccessful insufficient cash");
                         }
 
-                    }
-                } if (command.equals("C")) {
-                    if (total == 0) {
-                        System.out.println("Please order before attempting to pay");
-                    } else
-                    if (money.getCardBalance() >= total) {
-                        money.addCardBalance(-total);
-                        System.out.println("Payment successful your remaining balance is €" + money.getCardBalance());
-                        total = 0;
-                    } else if (money.getCardBalance() < total) {
-                        System.out.println("Payment declined invalid credit");
-                    }
+                    }if (command.equals("C")) {
+                        if (total == 0) {
+                            System.out.println("Please order before attempting to pay");
+                        } else
+                        if (money.getCardBalance() >= total) {
+                            money.addCardBalance(-total);
+                            System.out.println("Payment successful your remaining balance is €" + money.getCardBalance());
+                            total = 0;
+                        } else if (money.getCardBalance() < total) {
+                            System.out.println("Payment declined invalid credit");
+                        }
+                }
                 }
                 }else if (command.equals("S")) {
                     Scanner sc = new Scanner(new File("./Reservations.csv"));

@@ -7,7 +7,7 @@ public class Reservation {
     private String name;
     private String day;
     private String time;
-    private String numOfPeople;
+    private int numOfPeople;
     private String phoneNumber;
     private String customerID;
     private String tableNumber;
@@ -17,7 +17,7 @@ public class Reservation {
     private PrintWriter outTables = new PrintWriter(new FileOutputStream(fileTables, true));
 
 
-    public Reservation(String name, String day, String time, String numOfPeople, String phoneNumber, String tableNumber) throws IOException {
+    public Reservation(String name, String day, String time, int numOfPeople, String phoneNumber, String tableNumber) throws IOException {
         this.name = name;
         this.day = day;
         this.time = time;
@@ -34,15 +34,14 @@ public class Reservation {
     }
 
 
-    public String getNumOfPeople() {
-
+    public int getNumOfPeople() {
         return numOfPeople;
-    }
+   }
 
-    public int getNumOfPeopleInt() {
-        System.out.println("Number of people is " + numOfPeople);
-        return Integer.parseInt(numOfPeople);
-    }
+//    public int getNumOfPeopleInt() {
+//        System.out.println("Number of people is " + numOfPeople);
+//        return Integer.parseInt(numOfPeople);
+//    }
 
         public void removeReservation (String reservationID){
 
