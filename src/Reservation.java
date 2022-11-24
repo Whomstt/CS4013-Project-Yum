@@ -45,6 +45,7 @@ public class Reservation {
     }
 
     public String toString() {
-        return "" + "Reservation ID: " + reservationID + " Name: " + name + " Day: " + day + " Time: " + time + " Number Of People: " + numOfPeople + " Phone Number: " + phoneNumber;
+        return "" + "Reservation ID: " + reservationID + "  Name: " + name + "  Day: " + day + "  Time: " + time + "  Number Of People: " + numOfPeople + "  Phone Number: " + phoneNumber + "  1" +
+                "Table Number: " + tableNumber;
     }
 }

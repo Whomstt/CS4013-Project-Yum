@@ -1,24 +1,24 @@
 public class Restaurant {
-    private String RestaurantID;
-    private int Capacity;
+    private String restaurantID;
+    private int capacity;
 
-    public Restaurant(String RestaurantI){
-
+    public Restaurant(String restaurantID){
+        this.restaurantID = restaurantID;
     }
     public String getRestaurantID() {
-        return RestaurantID;
+        return restaurantID;
     }
 
     public int getCapacity() {
-        return Capacity;
+        return capacity;
     }
 
     public void setRestaurantID(String restaurantID) {
-        RestaurantID = restaurantID;
+        this.restaurantID = restaurantID;
     }
 
     public void setCapacity(int capacity) {
-        Capacity = capacity;
+        this.capacity = capacity;
     }
 
 }

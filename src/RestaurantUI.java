@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RestaurantUI {
@@ -10,6 +11,8 @@ public class RestaurantUI {
     private double total;
     Order thisOrder = new Order();
     Reservation thisReservation = new Reservation();
+    private boolean isANumber;
+    private int numberOfPeople;
 
     public RestaurantUI() throws IOException {
         in = new Scanner(System.in);
@@ -17,7 +20,12 @@ public class RestaurantUI {
 
     public void run(Restaurant restaurant) throws IOException {
         boolean more = true;
-        System.out.println("Select restaurant (1)Yum Diner, (2)Yum Pizza");
+        System.out.println("----------------------------------------------");
+        System.out.println("|             Choose Restaurant              |");
+        System.out.println("|                                            |");
+        System.out.println("|     (1)Yum Diner         (2)Yum Pizza      |");
+        System.out.println("|                                            |");
+        System.out.println("----------------------------------------------");
         int restaurantID = Integer.parseInt(in.nextLine());
         System.out.println("Login As (C)ustomer, (CH)ef, (W)aiter");
         String command = in.nextLine().toUpperCase();
@@ -36,7 +44,15 @@ public class RestaurantUI {
                         System.out.println("Enter Reservation Time:");
                         String time = in.nextLine();
                         System.out.println("Enter Number of People:");
-                        int numberOfPeople = in.nextInt();
+                        do {
+                            try {
+                                numberOfPeople = in.nextInt();
+                                isANumber = true;
+                            } catch (InputMismatchException e) {
+                                in.next();
+                                System.out.println("Please try again, Enter Number of People");
+                            }
+                        } while(!isANumber);
                         System.out.println("Enter Table Number");
                         String tableNumber = in.next();
                         System.out.println("Enter phone number:");
@@ -74,11 +90,11 @@ public class RestaurantUI {
                         money.addCashBalance(cashAmount);
                     } else if (command.equals("SP")) {
                         if (thisReservation.getNumOfPeople() == 0) {
-                            System.out.println("error, You must add reservation first");
+                            System.out.println("Error, You must add reservation first");
                         } else if (thisOrder.getTotal() == 0) {
-                            System.out.println("error, You must order first");
+                            System.out.println("Error, You must order first");
                         } else {
-                            System.out.println("Total amount is £ " + this.thisOrder.getTotal());
+                            System.out.println("Total amount is € " + this.thisOrder.getTotal());
                             System.out.println("The bill is split by " + this.thisReservation.getNumOfPeople() + " People");
                             double v = thisOrder.getTotal() / thisReservation.getNumOfPeople();
                             System.out.println("The amount split is €" + v);
@@ -113,7 +129,9 @@ public class RestaurantUI {
                         }
                     }
                 } else if (command.equals("S")) {
-                    System.out.println(reservations.toString());
+                    for (Reservation e : reservations) {
+                        System.out.println(e.toString());
+                    }
 
                 } else if (command.equals("R")) {
                     System.out.println("Enter Reservation ID of booking you would like to cancel");
