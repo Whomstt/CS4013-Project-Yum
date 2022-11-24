@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RestaurantUI {
-    private int reservationID = 1;
     private ArrayList<Reservation> reservations = new ArrayList<>();
     private Scanner in;
     private Money money = new Money();
@@ -45,7 +44,6 @@ public class RestaurantUI {
                         Reservation reservation = new Reservation(name, day, time, numberOfPeople, phoneNumber, tableNumber);
                         reservations.add(reservation);
                         thisReservation = reservation;
-                        reservationID++;
                     } else if (command.equals("C")) {
                         Scanner sc = new Scanner(new File("./Tables.csv"));
                         sc.useDelimiter(",");
@@ -56,7 +54,7 @@ public class RestaurantUI {
                         sc.close();
                     }
                 } else if (command.equals("Q")) {
-                    System.out.println("Exiting program... \uD83C\uDF46");
+                    System.out.println("Exiting program...");
                     more = false;
 
                 } else if (command.equals("O")) {
@@ -116,14 +114,6 @@ public class RestaurantUI {
                     }
                 } else if (command.equals("S")) {
                     System.out.println(reservations.toString());
-
-//                    Scanner sc = new Scanner(new File("./Reservations.csv"));
-//                    sc.useDelimiter(",");
-//                    while (sc.hasNext()) {
-//                        System.out.print(sc.next() + ", ");
-//                    }
-//                    System.out.println();
-//                    sc.close();
 
                 } else if (command.equals("R")) {
                     System.out.println("Enter Reservation ID of booking you would like to cancel");

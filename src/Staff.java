@@ -1,5 +1,5 @@
-public class Staff extends Person{
- private String occupation;
+public class Staff extends Person {
+    private String occupation;
 
     public Staff(String name, String age, String occupation) {
         super(name, age);

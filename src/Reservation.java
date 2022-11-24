@@ -22,6 +22,8 @@ public class Reservation {
         this.name = name;
         this.day = day;
         this.time = time;
+        this.tableNumber = tableNumber;
+        this.customerID = name;
         this.numOfPeople = numOfPeople;
         this.phoneNumber = phoneNumber;
         this.reservationID = (int) (Math.random() * 1000);

@@ -10,6 +10,7 @@ public class Customer extends Person {
         this.email = email;
         this.money = money;
     }
+
     public double getMoney() {
         return money;
     }
@@ -33,13 +34,16 @@ public class Customer extends Person {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void buyProduct(){
+
+    public void buyProduct() {
 
     }
-    public void refundProduct(){
+
+    public void refundProduct() {
 
     }
-    public void complaint(){
+
+    public void complaint() {
 
     }
 

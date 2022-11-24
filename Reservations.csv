@@ -18,3 +18,5 @@ ReservationId, numPeople, date, time, tableNo, customerId
 542,4,4,4,,4
 492,4,4,4,4,4
 82,4,4,4,4,4
+260,4,19/3/21,19:30,3,Cathal
+648,4,4,4,4,4

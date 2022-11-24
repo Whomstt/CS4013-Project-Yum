@@ -18,16 +18,16 @@ public class Menu {
         out.println("Type");
     }
 
-    public  void addItem (String name, double price, String type) {
+    public void addItem(String name, double price, String type) {
         Item newItem = new Item(name, price, type);
         menu.add(newItem);
         Item last = menu.get(menu.size() - 1);
 
-            out.print(last.getName());
-            out.print(", ");
-            out.print(last.getPrice());
-            out.print(", ");
-            out.println(last.getType());
+        out.print(last.getName());
+        out.print(", ");
+        out.print(last.getPrice());
+        out.print(", ");
+        out.println(last.getType());
     }
 
 
@@ -36,19 +36,19 @@ public class Menu {
         System.out.println("STARTERS");
 
         for (Item I : menu)
-        if(I.getType() == "Starter") {
-            System.out.println(I.toString());
-        }
+            if (I.getType() == "Starter") {
+                System.out.println(I.toString());
+            }
         System.out.println("");
         System.out.println("MAIN COURSES");
         for (Item I : menu)
-            if(I.getType() == "Main Course") {
+            if (I.getType() == "Main Course") {
                 System.out.println(I.toString());
             }
         System.out.println("");
         System.out.println("DESSERTS");
         for (Item I : menu)
-            if(I.getType() == "Dessert") {
+            if (I.getType() == "Dessert") {
                 System.out.println(I.toString());
             }
     }
@@ -69,9 +69,7 @@ public class Menu {
             defaultMenu.addItem("curry", 10, "Main Course");
             defaultMenu.addItem("lasagna", 12, "Main Course");
             defaultMenu.addItem("s", 0, "");
-        }
-
-        else if (restaurantID == 2) {
+        } else if (restaurantID == 2) {
             defaultMenu.addItem("wings", 4, "Starter");
             defaultMenu.addItem("nachos", 4.50, "Starter");
             defaultMenu.addItem("wings", 4, "Starter");
@@ -81,9 +79,9 @@ public class Menu {
             defaultMenu.addItem("vegetarian", 8.50, "Main Course");
             defaultMenu.addItem("meat feast", 9, "Main Course");
             defaultMenu.addItem("cheese", 7.50, "Main Course");
-            defaultMenu.addItem("cookies" , 2.50, "Dessert");
-            defaultMenu.addItem("churros" , 3.50, "Dessert");
-            defaultMenu.addItem("brownies" , 3, "Dessert");
+            defaultMenu.addItem("cookies", 2.50, "Dessert");
+            defaultMenu.addItem("churros", 3.50, "Dessert");
+            defaultMenu.addItem("brownies", 3, "Dessert");
             defaultMenu.addItem("s", 0, "");
         }
 
@@ -93,8 +91,6 @@ public class Menu {
     public ArrayList<Item> getMenu() {
         return menu;
     }
-
-
 
 
 }

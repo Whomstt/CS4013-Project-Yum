@@ -27,7 +27,6 @@ public class Order {
     }
 
 
-
     public Item selectItem(String i) {
         for (Item p : defaultMenu) {
             if (i.equals(p.getName())) {
@@ -110,11 +109,11 @@ public class Order {
         out = new PrintWriter(csvFile);
         System.out.println("--------------------------------");
         System.out.println("              BILL              ");
-        for (int i = 0; i < order.size();i++) {
+        for (int i = 0; i < order.size(); i++) {
             System.out.println(order.get(i));
-       }
+        }
         System.out.println();
-        System.out.println("Your total is €"+ total);
+        System.out.println("Your total is €" + total);
         if (restaurantID == 1) {
             System.out.println("Thanks for dining with Yum Diners");
         } else if (restaurantID == 2) {
@@ -126,9 +125,6 @@ public class Order {
         out.println(total);
         out.close();
     }
-
-
-
 
 
 }
