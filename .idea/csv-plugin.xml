@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Tables.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\Bill.csv">
           <value>
             <Attribute>
@@ -31,21 +38,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\src\Reservations.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\src\Restaurant.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\src\Tables.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
